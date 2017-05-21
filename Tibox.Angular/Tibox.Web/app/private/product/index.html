@@ -1,0 +1,52 @@
+﻿// Los dos puntos indica que no serán observados:
+<div ng-controller="productController as vm">
+    <h1>Product Controller</h1>
+    <div ng-show="vm.showCreate" class="alert alert-success alert-dismissable">
+        <a href="" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+        <strong> El producto se ha creado correctamente.</strong>
+    </div>
+    <div>
+        <button ng-click="vm.create();"
+                class="btn btn-success btn-sm"
+                data-toggle="modal"
+                data-target="#modal-container">
+            <span class="glyphicon glyphicon-plus-sign"></span>Crear
+        </button>
+    </div>
+    <div>
+        <button ng-click="vm.deleter();"
+                class="btn btn-success btn-sm"
+                data-toggle="modal"
+                data-target="#modal-container">
+            <span class="glyphicon glyphicon-minus-sign"></span>Eliminar
+        </button>
+    </div>
+    <product-card   ng-repeat="product in vm.productList" 
+                    id="{{::product.id}}"
+                    product-name="{{::product.productName}}"
+                    supplier-id ="{{::product.supplierId}}"
+                    unit-price="{{::product.unitPrice}}"
+                    package ="{{::product.package}}"
+                    is-discontinued ="product.isDiscontinued"
+                  >
+        <button ng-click="vm.getProduct(product.id); vm.edit();" 
+                class="btn btn-success btn-sm"
+                data-toggle="modal"
+                data-target="#modal-container"
+                >
+            <span class="glyphicon glyphicon-edit"></span>Editar
+        </button>
+    </product-card>
+    <modal-panel title="{{::vm.modalTitle}}"
+                 button-title ="{{::vm.modalButtonTitle}}"
+                 save-function="vm.modalFunction"
+                 close-function="vm.closeModal"
+                 read-only="vm.readOnly"
+                 is-delete="vm.isDelete"
+                 >
+        <product-form product ="vm.product">
+
+        </product-form>
+    </modal-panel>
+
+</div>
