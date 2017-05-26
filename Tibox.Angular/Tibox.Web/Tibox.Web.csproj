@@ -120,6 +120,7 @@
     <Content Include="app\private\product\directives\product-form\product-form.js" />
     <Content Include="app\private\product\index.html" />
     <Content Include="app\private\product\product.controller.js" />
+    <Content Include="app\public\login\index.html" />
     <Content Include="app\public\login\login.controller.js" />
     <Content Include="app\shared\authentication.service.js" />
     <Content Include="app\shared\configuration.service.js" />

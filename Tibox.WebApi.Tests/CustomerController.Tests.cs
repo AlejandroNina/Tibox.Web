@@ -7,6 +7,7 @@ using System.Linq;
 using System.Web.Http.Results;
 using FluentAssertions;
 using Tibox.Models;
+using Xunit;
 
 namespace Tibox.WebApi.Tests
 {
