@@ -18,7 +18,7 @@ namespace Tibox.Automation.Tests
         public void ProductTest()
         {
             ProductPage.Go();
-            ProductPage.Create().WithDataProduct(20,"Product1",2,160,"Coins",false).Save()
+            ProductPage.Create().WithDataProduct(20, "Product1", 2, 160, "Coins", false).Save();
         }
     }
 }
